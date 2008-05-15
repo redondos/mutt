@@ -1,0 +1,34 @@
+# -*- muttrc -*-
+#
+# List of folders that are considered to be "mailboxes" (folders that
+# receive incoming mail).
+#
+
+mailboxes !
+mailboxes "=Lists/anillo-lst"
+#mailboxes "=Lists/asterisk-users"
+mailboxes "=Lists/bcm43xx" 
+#mailboxes "=Lists/fetchmail-friends"
+# mailboxes "=Lists/gnupg-users"
+mailboxes "=Lists/grulic"
+mailboxes "=Lists/lugfi_lug"
+mailboxes "=Lists/lugfi_org"
+mailboxes "=Lists/lugmen_lug-clasificados" 
+mailboxes "=Lists/lugmen_lug-devel" 
+mailboxes "=Lists/lugmen_lug-electronica" 
+mailboxes "=Lists/lugmen_lug-grouchesque" 
+mailboxes "=Lists/lugmen_lug-list"
+mailboxes "=Lists/lugmen_lug-noticias" 
+mailboxes "=Lists/lugmen_lug-novatos"
+mailboxes "=Lists/lugmen_lug-org" 
+mailboxes "=Lists/lugmen_lug-wireless"
+mailboxes "=Lists/sdhci-devel"
+mailboxes "=Lists/synce-cvslog"
+mailboxes "=Lists/synce-users"
+# mailboxes "=Lists/ubuntu-users"
+mailboxes "=Lists/uucpssh"
+mailboxes "=Lists/wmii"
+mailboxes "=Lists/xfce"
+mailboxes "=Lists/xfce-goodies-dev"
+mailboxes "=People/redondos"
+mailboxes "=Spam"

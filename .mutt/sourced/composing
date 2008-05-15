@@ -1,0 +1,24 @@
+# -*- muttrc -*-
+#
+# Composing & sending
+#
+
+set mime_forward			# Forward message as MIME attachments.
+unset reply_self
+set fast_reply
+					# Spell checking with http://www.vim.org/scripts/script.php?script_id=195
+# set editor="vim \"+normal \\\\ec\" +/^$/"
+# superceeded by inserting mail-specific settings into mail file format definition
+# set editor="/usr/bin/vim -s ~/.mutt/vim/commands -u ~/.mutt/vim/vimrc"
+set editor="/usr/bin/vim -s ~/.mutt/vim/commands"
+set edit_headers			# Permit editting of message headers
+set sendmail_wait=-1			# Don't wait around for sendmail.
+#set sendmail="$HOME/.mutt/scripts/msmtpqueue/msmtp-enqueue.sh"		# Use msmtp
+#set sendmail="/usr/bin/msmtp"		# Use msmtp
+set signature="~/.signature"
+set dotlock_program=/usr/bin/mutt_dotlock
+# Recommended crap from msmtp man page that I don't need.
+# set use_from=yes
+# set realname="redondos--"
+# set from=redondos@gmail.com
+# set envelope_from=yes

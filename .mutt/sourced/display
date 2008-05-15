@@ -1,0 +1,55 @@
+# -*- muttrc -*-
+#
+# Display settings
+#
+
+push <show-version>			# Show version at startup
+# set ascii_chars			# Fixes ugly arrows
+set sort=date			# Sort by threads
+set sort_aux=date-received		# Secondary sorting method
+set pager_index_lines=15		# 15 lines assigned to message list when viewing one
+set my_pager_index_lines=pager_index_lines
+set read_inc=25				# Read counter ticks every 100 msgs.
+set write_inc=25			# Write counter ticks every 100 msgs.
+set pager_stop				# Don't skip msgs on next page.
+unset menu_move_off			# Don't let last items of menus scroll up past the bottom of the screen.
+set menu_scroll				# Scroll line by line when reaching end of page.
+set menu_context=5			# Lines of context
+set pager_context=1			# Lines of context
+unset markers				# Add a '+' marker to wrapped lines.
+# auto_view *
+mime_lookup application/octet-stream	# See if it is really the correct MIME type, otherwise change it.
+mime_lookup text/plain		 	# See if it is really the correct MIME type, otherwise change it.
+alternative_order text/plain text/html
+set ignore_list_reply_to
+# Set t-prot display_filter if exists
+set my_tprot='-cemt -M=mutt'
+`~/.mutt/scripts/t-prot.sh \$my_tprot`
+
+# set date_format="!%a, %d %b, %Y at %H:%M:%S %Z"
+# set date_format="%a, %b %d %Y %H:%M"
+# set date_format="%a, %d/%b/%Y %H:%M"
+set date_format="%a %d.%b.%y %H:%M"
+
+unset wait_key				# Don't prompt for a key press after shell-escape and the like.
+
+# index_format: now in folder-hooks
+# Default
+# 1447  sL Feb 11 To mutt-users@m (3.8K) Changing the default cursor position in vim
+# set index_format="%4C %Z %{%b %d} %-15.15F (%?l?%4l&%4c?) %s"
+
+# 1447  sL Sun, Feb 11 2007 23:19 Greg Tees              (3.8K) Changing the default cursor position in vim
+# set index_format="%4C %Z %D %-22.22F (%?l?%4l&%4c?) %s"
+
+# 1447  sL  [3.8K]  Sun, Feb 11 2007 23:19                Greg Tees   Changing the default cursor position in vim
+# set index_format="%4C %Z  [%?l?%4l&%4c?]  %D   %20.20F   %s"
+
+# set folder_format="%2C %8s %d %t %8N   %f"
+set folder_format="%2C %s %d %t %2N   %f"
+
+## Sidebar
+set sidebar_width=50
+set sidebar_visible=yes
+# set sidebar_position=1
+set sidebar_delim=|
+

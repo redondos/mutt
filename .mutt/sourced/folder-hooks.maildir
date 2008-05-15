@@ -1,0 +1,11 @@
+# -*- muttrc -*-
+#
+# folder  hooks, everything goes to the current folder except for items in the inbox
+#
+
+folder-hook	.							'set record="^"'
+folder-hook .      'macro index d "<save-message>=Trash<enter>"'
+folder-hook =Trash 'macro index d <delete-message>'
+folder-hook	~/Maildir$						'set record==Sent"'
+folder-hook	/var/mail/redondos					'set record==Sent"'
+# folder-hook +(mailinglists|trash)|.maildir 'set record=+sent-mail'

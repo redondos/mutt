@@ -1,0 +1,32 @@
+# -*- muttrc -*-
+#
+# Tell mutt which MIME types to auto-view
+#
+
+auto_view application/zip
+auto_view application/x-gzip
+auto_view application/x-gunzip 
+auto_view application/pgp-signature
+auto_view application/pgp
+auto_view application/octet-stream 
+auto_view application/x-zip-compressed
+auto_view application/vnd.ms-powerpoint
+auto_view application/vnd.ms-excel
+auto_view application/x-arj-compressed
+auto_view application/x-tar-gz
+auto_view application/ms-tnef
+auto_view application/x-perl
+auto_view application/x-sh
+auto_view application/x-tcl
+auto_view application/x-delphi-source
+auto_view application/emacs-lisp
+auto_view application/msword
+auto_view application/pdf
+auto_view text/x-patch
+auto_view text/html
+auto_view text/HTML
+auto_view text/x-vcard
+auto_view text/x-script.elisp
+auto_view text/x-lisp
+auto_view text/x-diff
+auto_view image/*

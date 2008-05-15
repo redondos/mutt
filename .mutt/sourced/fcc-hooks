@@ -1,0 +1,29 @@
+# -*- muttrc -*-
+#
+# Fcc hooks, everything else goes to =Sent
+#
+
+# Lists
+fcc-save-hook '~t lug-list@lugmen*'				=Lists/lugmen_lug-list
+fcc-save-hook '~t lug-devel@lugmen*'				=Lists/lugmen_lug-devel
+fcc-save-hook '~t lug-org@lugmen*'				=Lists/lugmen_lug-org
+fcc-save-hook '~t lug-wireless@lugmen*'				=Lists/lugmen_lug-wireless
+fcc-save-hook '~t lug-noticias@lugmen*'				=Lists/lugmen_lug-noticias
+fcc-save-hook '~t lug@listas\.fi\.uba*'				=Lists/lugfi_lug
+fcc-save-hook '~t lug@org\.lug\.fi\.uba*'			=Lists/lugfi_org
+fcc-save-hook '~t gnupg-users*'					=Lists/gnupg-users
+fcc-save-hook '~t fetchmail-users*'				=Lists/fetchmail-users
+fcc-save-hook '~t bcm43xx*'					=Lists/bcm43xx
+fcc-save-hook '~t asterisk-users*'				=Lists/asterisk-users
+fcc-save-hook '~t grulic*'					=Lists/grulic
+fcc-save-hook '~t ubuntu-users*'				=Lists/ubuntu-users
+fcc-save-hook '~t uucpssh*'					=Lists/uucpssh
+fcc-save-hook '~t xfce-goodies*'				=Lists/xfce-goodies
+fcc-save-hook '~t xfce@xfce\.org'				=Lists/xfce
+
+# People
+fcc-save-hook '~t redondos*'					=People/redondos
+fcc-save-hook '~t aolivera*'					=People/redondos
+# fcc-save-hook .*						=Sent
+# folder-hook .							'set record="^"'
+#fcc-save-hook .							'^'

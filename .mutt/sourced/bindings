@@ -1,0 +1,85 @@
+# -*- muttrc -*-
+#
+# Keyboard bindings for mutt.
+#
+
+# Generic key bindings.
+bind generic "\e<"   first-entry
+bind generic "\e>"   last-entry
+bind generic "<"     first-entry
+bind generic ">"     last-entry
+bind generic <home>  first-entry
+bind generic <end>   last-entry
+bind generic <left>  previous-entry
+bind generic <right> next-entry
+bind index	q	noop
+bind pager	Q	noop
+bind generic,pager	<esc>q	exit
+
+#bind generic <tab> previous-new
+
+# Specific key bindings.
+bind index   '\ep'      previous-thread
+bind index   '\en'      next-thread
+bind index   "x"      noop
+bind index   "\ex"    quit
+bind index   "\Cxo"   change-folder
+bind index   "\Cxb"   change-folder
+bind index   "\Cx\Cf" change-folder
+# bind index <tab><shift>	next-unread
+# bind index "G"	imap-fetch-mail
+bind editor  "\C?"    backspace
+bind alias   " "      tag-entry
+bind alias   "\r"     select-entry
+bind attach  "v"      select-entry
+bind compose "v"      view-attach
+bind pager   "\e<"    top
+bind pager   "\e>"    bottom
+bind pager   "<"      top
+bind pager   ">"      bottom
+bind pager   <home>   top
+bind pager   <end>    bottom
+bind pager   "{"      previous-thread
+bind pager   "}"      next-thread
+bind pager   <up>     previous-line
+bind pager   <down>   next-line
+bind pager   <left>   previous-undeleted
+bind pager   <right>  next-undeleted
+bind pager   "t"      display-toggle-weed
+bind pager   "x"      noop
+bind pager   "\ex"    exit
+bind pager   "\Cxo"   change-folder
+bind pager   "\Cxb"   change-folder
+bind pager   "\Cx\Cf" change-folder
+# bind pager	t	reply
+# bind index	t	reply
+#
+# Sidebar
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
+bind pager <control><enter> sidebar-open
+bind index B bounce-message
+bind index '{'	sidebar-prev
+bind index '}'	sidebar-next
+bind index '+' sidebar-open
+bind pager '{'	sidebar-prev
+bind pager '}'	sidebar-next
+bind pager '+' sidebar-open
+
+bind editor <tab> complete-query
+bind pager	j	next-line
+bind pager	k	previous-line
+bind pager	[	half-up
+bind pager	]	half-down
+bind pager	{	previous-page
+bind pager	}	next-page
+bind generic	{	previous-page
+bind generic	}	next-page
+
+bind browser	<space>	next-page
+
+bind index,pager	,C	next-unread-mailbox

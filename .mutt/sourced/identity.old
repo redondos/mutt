@@ -1,0 +1,42 @@
+# -*- muttrc -*-
+#
+# Identity
+#
+
+# set spoolfile="/var/mail/redondos"
+# set spoolfile="~/Maildir"
+# set folder="~/Mail"
+#set imap_authenticators="gssapi:cram-sha256:cram-sha1:cram-md5:login"
+set spoolfile=imaps://redondos@refinery.twat.com.ar
+# Courier
+# set folder=imap://refinery.twat.com.ar/INBOX
+# set imap_home_namespace="INBOX"
+# Dovecot
+set folder=imaps://refinery.twat.com.ar
+set postponed==Drafts
+set imap_idle=yes 			# Causes fam to hog the CPU when monitoring maildirs with thousands of messages.
+# set imap_recent
+set imap_keepalive=300
+set header_cache=~/.mutt/cache/headers
+set maildir_header_cache_verify=yes
+set message_cachedir=~/.mutt/cache/messages
+set maildir_trash=yes
+# set mask="!^\.[^.]"
+set my_mask=$mask
+set timeout=10
+set mail_check=30
+set beep_new
+set query_command=muttquery.py
+
+## nntp
+# set news_server="news.gmane.org"
+# set news_cache_dir="~/.mutt/cache/news"
+
+#-- Alternates setup --#
+set reverse_name=yes
+set reverse_realname=no
+alternates "redondos@gmail.com|aolivera@gmail.com|redondos@redondos.biz|redondos@myrealbox.com|redondos@lugmen.org.ar|aolivera@hotpop.com|redondos@twat.com.ar|aolivera@twat.com.ar|redondos@aolivera.com.ar|aolivera@aolivera.com.ar"
+# set realname="redondos"
+# set from="redondos@gmail.com"
+# set use_from=yes
+#-- End alternates setup --#

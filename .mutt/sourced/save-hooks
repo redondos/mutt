@@ -1,0 +1,10 @@
+# -*- muttrc -*-
+#
+# Save hooks
+#
+
+save-hook '~f root@localhost'				=Temp/rootmail
+save-hook "!~l ~B '[^[:alpha:]]angel[^[:alpha:]]'"		=people.
+save-hook '~f wsmith@wordsmith.org'			=newsletters.Wordsmith
+save-hook '~f .*delanceyplace.com'			=newsletters.Delanceyplace
+save-hook "~B '(subscribe|remove)'"				=newsletters.

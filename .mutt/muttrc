@@ -1,0 +1,26 @@
+# -*- muttrc -*-
+#
+# Main configuration file.
+#
+
+# source ~/.mutt/sourced/fcc-hooks		# Hooks for outgoing mail | Functionality replaced by folder-hooks
+source `~/.mutt/scripts/themes.sh`		# Color 
+source ~/.mutt/sourced/aliases			# Well, aliases.
+source ~/.mutt/sourced/autoview			# Autoview
+source ~/.mutt/sourced/bindings			# Key bindings 
+source ~/.mutt/sourced/composing		# Composing & sending.
+source ~/.mutt/sourced/display			# Display settings.
+source ~/.mutt/sourced/identity			# Identity.
+source ~/.mutt/sourced/folder-hooks		# Folder hooks.
+source ~/.mutt/sourced/gpg			# GnuPG 
+source ~/.mutt/sourced/headers			# Customize header display 
+source ~/.mutt/sourced/lists			# Mailing lists (subscribed or not)
+source ~/.mutt/sourced/macros			# Macros.
+source ~/.mutt/sourced/mailboxes		# Mailboxes that receive mail
+source ~/.mutt/sourced/options			# Options.
+source ~/.mutt/sourced/other-hooks		# Other hooks
+source ~/.mutt/sourced/save-hooks		# Auto-select save folders
+source ~/.mutt/sourced/send-hooks		# Automatically change From: headers and such
+source ~/.mutt/sourced/sensitive		# Sensitive, private bits
+source ~/.mutt/sourced/spam			# Spam filtering settings.
+source ~/.mutt/sourced/temp			# Temporary, test stuff

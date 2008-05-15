@@ -1,0 +1,81 @@
+# -*- muttrc -*-
+#
+# Account setup
+#
+
+### Static options
+
+## Alternates
+alternates "redondos@gmail.com|aolivera@gmail.com|redondos@redondos.biz|\
+redondos@myrealbox.com|redondos@lugmen.org.ar|aolivera@hotpop.com|\
+redondos@twat.com.ar|aolivera@twat.com.ar|redondos@aolivera.com.ar|\
+aolivera@aolivera.com.ar|angelo@nc-company.com|a(ngelo|olivera)@ncomputing.com"
+set reverse_name=yes
+set reverse_realname=no
+
+## IMAP
+# unset imap_passive
+set maildir_header_cache_verify=yes
+set maildir_trash=yes
+set imap_idle=yes 			# May cause FAM to hog the CPU when
+					# monitoring maildirs with thousands of messages.
+set mail_check=30
+set imap_keepalive=300
+set timeout=10
+
+## Folders
+# set folder=imaps://refinery.twat.com.ar/
+# set spoolfile="=INBOX"
+# set spoolfile="imaps://refinery.twat.com.ar/INBOX"
+set postponed==Drafts
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/messages
+set my_mask=$mask
+# set mask="!^\.[^.]"
+
+## Options
+set beep_new
+# set query_command=muttquery.py
+set query_command="lbdbq %s"
+
+
+
+### IMAP accounts
+
+unset imap_passive
+## Generic
+account-hook	.	'set imap_authenticators="cram-md5:gssapi:cram-sha256:cram-sha1:login"'
+account-hook	.	'set trash==Trash'
+
+## redondos@twat.com.ar
+account-hook	imap://.*twat.com.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh`'
+account-hook	imap://.*twat.com.ar	'set folder=imaps://refinery.twat.com.ar/ spoolfile==INBOX'
+#account-hook	.	'source ~/.mutt/sourced/autoview'
+#account-hook	.	'set from="redondos <redondos@gmail.com>"'
+account-hook	.	'unset smtp_authenticators smtp_pass smtp_url'
+# If desired, use a smarthost.
+# account-hook	.	'set smtp_authenticators="cram-md5:login" smtp_pass=`~/.mutt/scripts/imap_password.sh` smtp_url=smtps://redondos@refinery.twat.com.ar:587'
+# account-hook	.	'set smtp_authenticators="cram-md5:login" smtp_pass=`~/.mutt/scripts/imap_password.sh lugmen` smtp_url=smtps://redondos@father.lugmen.org.ar:587'
+
+## redondos@lugmen.org.ar
+account-hook	imaps://mother.lugmen.org.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh lugmen`'
+account-hook	imaps://mother.lugmen.org.ar	'set folder=imaps://mother.lugmen.org.ar spoolfile==INBOX'
+account-hook	imaps://mother.lugmen.org.ar	'set imap_authenticators="login"'
+# account-hook	imap://lugmen.org.ar	'unauto_view *'
+# account-hook	imap://lugmen.org.ar	'set from="redondos <redondos@lugmen.org.ar>"'
+# account-hook	imap://lugmen.org.ar	'set smtp_authenticators=login smtp_pass=`~/.mutt/scripts/imap_password.sh lugmen` smtp_url=smtps://redondos@lugmen.org.ar:25'
+
+## aolivera@gmail.com
+account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
+account-hook	imaps://aolivera@imap.gmail.com	'set folder=imaps://aolivera@imap.gmail.com:993/ spoolfile==INBOX'
+account-hook	imaps://aolivera@imap.gmail.com	'set trash==[Gmail]/Trash'
+account-hook	imaps://aolivera@imap.gmail.com	'source ~/.mutt/sourced/mailboxes-aolivera@gmail.com'
+
+## redondos@gmail.com
+account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
+account-hook	imaps://redondos@imap.gmail.com	'set folder=imaps://redondos@imap.gmail.com:993/ spoolfile==INBOX'
+account-hook	imaps://redondos@imap.gmail.com	'set trash==[Gmail]/Trash'
+account-hook	imaps://redondos@imap.gmail.com	'source ~/.mutt/sourced/mailboxes-redondos@gmail.com'
+# folder-hook	imaps://redondos@imap.gmail.com.*	'source ~/.mutt/sourced/mailboxes-redondos@gmail.com'
+
+# vi: syntax=muttrc

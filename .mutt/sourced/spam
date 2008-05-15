@@ -1,0 +1,19 @@
+# -*- muttrc -*-
+#
+# Spam filtering settings
+#
+
+## Spam
+set imap_headers="X-Bogosity X-Spam-Status X-Grouchosity"
+unset spam_separator
+
+# Bogofilter
+# X-Bogosity: Ham, tests=bogofilter, spamicity=0.016339, version=1.1.5
+# spam "X-Bogosity: Spam, [^,]*, spamicity=([^,]*)"	"%1 BF"
+spam "X-Grouchosity: Grouchesque, [^,]*, factor=(....)"	"%1 GR"
+spam "X-Bogosity: Spam, [^,]*, spamicity=(....)"	"%1 BF"
+
+# SpamAssassin
+# X-Spam-Status: No, score=3.6 required=5.0 tests=HTML_FONT_BIG,HTML_MESSAGE,
+# 		SUBJ_ILLEGAL_CHARS,UNPARSEABLE_RELAY autolearn=no version=3.1.8-gr0
+spam "X-Spam-Status: Yes, score=([^ ]*)"		"%1 SA"

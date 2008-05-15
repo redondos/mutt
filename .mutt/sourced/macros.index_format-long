@@ -1,0 +1,5 @@
+macro index,pager <f6> '\
+<enter-command> set index_format=$my_index_format<enter>\
+<enter-command> source ~/.mutt/sourced/macros.index_format-short<enter>\
+<enter-command> set ?index_format<enter>\
+' 'index_format: long'

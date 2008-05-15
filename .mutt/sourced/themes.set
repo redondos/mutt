@@ -1,0 +1,2 @@
+## Color switching: save default theme
+push "<shell-escape> rm ~/.mutt/themes.default; ln -s ~/.mutt/themes/$my_theme ~/.mutt/themes.default<enter>"

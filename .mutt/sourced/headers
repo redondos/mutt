@@ -1,0 +1,34 @@
+# -*- muttrc -*-
+#
+# Configure header displays.
+#
+
+# Ignore all headers
+ignore *
+
+# Then un-ignore the ones we want to see
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Mail-Followup-To:
+unignore Subject:
+unignore Date:
+unignore Organization:
+unignore Newsgroups:
+unignore CC:
+unignore BCC:
+unignore Message-ID:
+unignore X-Mailer:
+unignore User-Agent:
+unignore X-Junked-Because:
+unignore X-SpamProbe:
+unignore X-Virus-hagbard:
+unignore X-Spam-Status
+unignore X-Grouchosity
+unignore X-Bogosity
+
+# Sort order
+hdr_order From: Subject: To: CC: BCC: Reply-To: Mail-Followup-To: Date: Organization: User-Agent: X-Mailer: Message-Id: In-Reply-To: References: X-Spam-Status: X-Grouchosity: X-Bogosity:
+
+# Also cache these ones
+set imap_headers="Message-ID In-Reply-To References X-Bogosity X-Spam-Status X-Grouchosity"

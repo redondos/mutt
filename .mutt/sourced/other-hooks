@@ -1,0 +1,4 @@
+# Compressed folders
+open-hook \\.gz$ "gzip -cd %f > %t"
+close-hook \\.gz$ "gzip -c %t > %f"
+append-hook \\.gz$ "gzip -c %t >> %f"

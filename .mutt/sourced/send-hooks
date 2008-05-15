@@ -1,0 +1,90 @@
+# -*- muttrc -*-
+#
+# Send (and message) hooks
+#
+
+## From and Signature ##
+# The default account is now chosen by a folder-hook, see there for more information.
+# send-hook	.*				'my_hdr From: redondos <redondos@gmail.com>'
+# send-hook	.*				'set from="redondos <redondos@gmail.com>"'
+send-hook	.*				'set signature="~/.signature"'
+send-hook	'~f ^redondos@twat.com.ar$'	'my_hdr From: redondos <redondos@twat.com.ar>'
+send-hook	'~f ^redondos@myrealbox.com$'	'my_hdr From: redondos <redondos@myrealbox.com>'
+send-hook	'~f ^aolivera@twat.com.ar$'	'my_hdr From: Angel Olivera <aolivera@twat.com.ar>'
+send-hook	'~f ^aolivera@gmail.com$'	'my_hdr From: Angel Olivera <aolivera@gmail.com>'
+# send-hook	'~f ^aolivera@gmail.com$'	'set from="aolivera@gmail.com"; set realname="Angel Olivera"'
+send-hook	'~f ^aolivera@gmail.com$'	'set signature="~/.mutt/signatures/angel"'
+send-hook	'~f ^angelo@nc-company.com$'	'set signature="~/.mutt/signatures/angelo"; my_hdr From: Angelo Olivera <angelo@nc-company.com>; set pgp_autosign'
+send-hook	'~f ^angelo@ncomputing.com$'	'set signature="~/.mutt/signatures/angelo"; my_hdr From: Angelo Olivera <angelo@ncomputing.com>; set pgp_autosign'
+send-hook '~t "(majordomo|subscribe)"' 'unset signature'
+
+# set my_friendlywords='(~b beso|~b besit|~b abrazo|~b kiss|~b hug)' # Works too
+set my_friendlywords='~b "(beso|besit|abrazo|kiss|hug|love)"'
+# ~b is not available with (send|reply)-hook
+message-hook	"!~l (~L aolivera|~B '[^[:alpha:]]angel[^[:alpha:]]') $my_friendlywords"			'set signature="~/.mutt/signatures/angel.informal"'
+
+## Custom headers ##
+send-hook	'~A'	'my_hdr X-Accept-Language: en, es, es_AR'
+send-hook	'~A'	'my_hdr X-GPG-ID: 0xDB98F72'
+send-hook	'~A'	'my_hdr X-GPG-Fingerprint: A182 F6EC 302B 8491 A563 9B28 259F F209 CDB9 8F72'
+
+send-hook	'~f redondos'	'my_hdr X-Homepage: http://www.redondos.biz'
+send-hook	'!~f redondos'	'unmy_hdr X-Homepage'
+
+send-hook	'~f redondos'	'my_hdr X-Blog: http://blog.twat.com.ar'
+send-hook	'!~f redondos'	'unmy_hdr X-Blog'
+
+send-hook	'~f redondos'	'my_hdr X-Jabber-ID: redondos@lugmen.org.ar'
+send-hook	'~f aolivera !~L .*lug.*'	'my_hdr X-Jabber-ID: aolivera@gmail.com'
+send-hook	'!~f aolivera !~f redondos'	'unmy_hdr X-Jabber-ID'
+
+send-hook	'~f redondos'	'my_hdr X-MSN-ID: redondos@redondos.biz'
+send-hook	'!~f redondos'	'unmy_hdr X-MSN-ID'
+
+send-hook	'~f redondos'	'my_hdr X-AIM-ID: redondossh'
+send-hook	'!~f redondos'	'unmy_hdr X-AIM-ID'
+
+send-hook	'~f redondos'	'my_hdr X-UIN: 11943866'
+send-hook	'!~f redondos'	'unmy_hdr X-UIN'
+
+send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
+send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
+send-hook	'!~f redondos'	'unmy_hdr X-YIM-ID'
+
+send-hook	'~t musicbrainz' 'my_hdr From: Angel Olivera <redondos@gmail.com>'
+
+# send-hook	'~f redondos'	'my_hdr X-Operating-System: `uname -sr`
+# send-hook	'!~f redondos'	'unmy_hdr X-Operating-System`
+
+## Notes ##
+
+# It would be nice to let mutt change the From header when it detects the 
+# message contains "angel", not only the signature.
+#
+# The problem is that message-hooks get executed before send-hooks, so the 
+# latter (which is specified above) selects the header later.
+
+# send-hook	'~f ^aolivera@gmail.com$'	'my_hdr What: Angel Olivera <aolivera@gmail.com>'
+
+# I also experienced a strange situation: with the line below, the signature 
+# that ends up being applied is the "test" one instead of the "angel" one 
+# that is set above with a send-hook.
+
+# message-hook "~b angel" 'set signature=~/.mutt/signatures/test' # works
+# message-hook "~b angel" 'my_hdr What: pepe <pepe@pepe.com>'	# doesn't
+# message-hook "~b angel" 'set from="pepe <pepe@pepe.com>"'
+
+# send-hook	'~f ^aolivera@gmail.com$'	'set sendmail=/usr/nada'
+# message-hook "~b angel" 'set sendmail=/usr/nada2' # wins, but maybe 
+# because of the message showing later
+
+## Old stuff ##
+
+# message-hook	'~f ^aolivera@gmail.com$'	'set realname="Angel Olivera"'				# So that the name is automatically selected
+# reply-hook	'~f ^aolivera@gmail.com$'	'set realname="Angel Olivera"'				# So that the name is automatically selected
+# send-hook	'~f ^aolivera@gmail.com$'	'my_hdr From: Angel Olivera <aolivera@gmail.com>'
+#
+# reply-hook	'~f ^redondos@gmail.com$'	'set realname="redondos"'				# So that the name is automatically selected
+# send-hook	'~t ^redondos@gmail.com$'	'my_hdr From: Angel Olivera <aolivera@gmail.com>'	# These my_hdr hooks would screw up my 'alternates' setup.
+# send-hook	.*				'my_hdr From: redondos <redondos@gmail.com>'		# Leave them commented.
+

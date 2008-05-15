@@ -1,0 +1,5 @@
+macro index,pager <f9> '\
+<enter-command> set pager_index_lines=0<enter>\
+<enter-command> source ~/.mutt/sourced/macros.pager_index_lines-on<enter>\
+<enter-command> set ?pager_index_lines<enter>\
+' 'pager_index_lines off'

@@ -1,0 +1,19 @@
+# -*- muttrc -*-
+#
+# Options
+#
+
+set move=no				# Don't move to mbox folder
+set noconfirmappend			# Just append, don't hassle me.
+set copy				# Save copies of outgoing messages
+set record==Sent			# Save outgoing messages to folder
+set delete=ask-yes			# Ask before deleting, preselecting 'yes'
+# set implicit_autoview=yes		# Autoview every MIME type with a copiousoutput entry in mailcap.
+set alias_file=~/.mutt/aliases
+set forward_edit=ask-no
+set text_flowed				# Enable format=flowed for text/plain.
+set hdrs=yes				# Enable my_hdr fields
+set use_envelope_from=yes		# 
+# set envelope_from			# To let mutt choose msmtp account.
+set print_command="muttprint"
+

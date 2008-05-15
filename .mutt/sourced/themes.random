@@ -1,0 +1,5 @@
+set my_theme=`ls ~/.mutt/themes | randomize | head -1`
+# source ~/.mutt/uncolor
+uncolor index *
+source ~/.mutt/themes/$my_theme
+set ?my_theme

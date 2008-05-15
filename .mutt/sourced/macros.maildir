@@ -1,0 +1,13 @@
+# -*- muttrc -*-
+#
+# Macros for mutt.
+#
+
+set wait_key=no				# Don't show the "Press any key to continue..." message.
+macro index S "|bogofilter -s\ns=Spam\n"	"Learn as spam and save to junk"
+macro pager S "|bogofilter -s\ns=Spam\n"	"Learn as spam and save to junk"
+macro index H "<pipe-entry>bogofilter -n<enter>"	"Learn as ham and save"
+macro pager H "|bogofilter -n\n"	"Learn as ham and save"
+macro pager B "<pipe-entry>urlview<enter>"
+macro index,pager,compose <f1> "<edit-from>=Angel Olivera <aolivera@gmail.com>"
+macro index,pager,compose <f2> "<enter-command>set from=me <me@me.com><enter><mail>"
