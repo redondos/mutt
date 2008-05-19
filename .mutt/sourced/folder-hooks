@@ -61,8 +61,7 @@ folder-hook	.people.NComputing			'unset from; my_hdr From: Angelo Olivera <angel
 
 folder-hook	.				'set sendmail="$HOME/.mutt/scripts/msmtpqueue/msmtp-enqueue.sh"'
 # folder-hook	.				'set sendmail="/usr/bin/msmtp"'
-folder-hook	.(lists|ml)				'set sendmail="/usr/sbin/sendmail -oem -oi"'
-folder-hook	.ml-				'set sendmail="/usr/sbin/sendmail -oem -oi"'
+folder-hook	.(lists|ml)			'set sendmail="/usr/sbin/sendmail -oem -oi"'
 # Not needed, since using redondos@twat.com.ar now instead of gmail
 # folder-hook	=lists.mutt			'set sendmail="/usr/bin/msmtp -C /home/redondos/.msmtprc.sendmail --domain=twat.com.ar"'
 
@@ -74,6 +73,15 @@ folder-hook	.ml-				'set sendmail="/usr/sbin/sendmail -oem -oi"'
 
 folder-hook	.				'unmy_hdr To'
 folder-hook	.(lists|ml).musicbrainz-users	'my_hdr To: musicbrainz-users@lists.musicbrainz.org'
+
+###############################################################################
+#
+# spam
+#
+###############################################################################
+
+folder-hook    'imaps://.*imap.gmail.com'                     'macro index,pager S "<save-message>=[Gmail]/Spam?<enter>"    "mark message as spam"
+folder-hook    'imaps://.*imap.gmail.com/.Gmail./Spam'        'macro index,pager H "<save-message>=!<enter>"               "mark message as ham"
 
 ###############################################################################
 #
@@ -94,9 +102,10 @@ folder-hook	.(lists|ml).musicbrainz-users	'my_hdr To: musicbrainz-users@lists.mu
 # # folder-hook +(mailinglists|trash)|.maildir 'set record=+sent-mail'
 
 folder-hook	'imaps://.*(twat|lugmen)'			'set record==Sent'
-folder-hook	'imaps://.*@imap.gmail.com'			set record='=[Gmail]/Sent\ Mail'
+folder-hook	'imaps://.*@imap.gmail.com'			unset record
 folder-hook	.people/NComputing				set record="^"
 folder-hook	.NComputing					set record="^"
+folder-hook	.(lists|ml)					set record='=[Gmail]/Sent\ Mail'
 
 ###############################################################################
 #
