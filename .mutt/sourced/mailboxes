@@ -4,11 +4,11 @@
 # receive incoming mail).
 #
 
-set folder="imaps://aolivera@imap.gmail.com:993/"
+set folder="imaps://aolivera@imap.gmail.com"
 mailboxes "=INBOX"
 mailboxes "=NComputing"
 
-set folder="imaps://redondos@imap.gmail.com:993/"
+set folder="imaps://redondos@imap.gmail.com"
 # mailboxes !
 # mailboxes "=ml-archlinux_arch"
 # mailboxes "=ml-archlinux_arch-ports"
@@ -71,3 +71,6 @@ mailboxes "=ml-vim"
 mailboxes "=ml-wmii"
 mailboxes "=ml-zsh-users"
 mailboxes "=ml-zsh-workers"
+
+unset folder
+

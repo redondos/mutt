@@ -5,6 +5,17 @@
 
 ###############################################################################
 #
+# $folder
+#
+###############################################################################
+
+folder-hook	'imaps://.*twat.com.ar'			'set folder=imaps://refinery.twat.com.ar/	spoolfile==INBOX'
+folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.gmail.com/	spoolfile==INBOX'
+folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/	spoolfile==INBOX'
+folder-hook	'imaps://mother.lugmen.org.ar'		'set folder=imaps://mother.lugmen.org.ar	spoolfile==INBOX'
+
+###############################################################################
+#
 # "From" header manipulation ##
 #
 ###############################################################################
@@ -24,22 +35,23 @@
 # from address should be changed.
 # folder-hook	.				'my_hdr From: redondos <redondos@gmail.com>'
 
-folder-hook	.				'unmy_hdr From; set from="redondos <redondos@gmail.com>"; set realname="redondos"'
-folder-hook	.lists.*			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
-folder-hook	.lists.mutt			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.lists.zsh			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.lists.vim			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.lists.lugfi			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
-folder-hook	.lists.lugfi_(joda|bar)		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
-folder-hook	.lists.lugmen			'unset from; my_hdr From: redondos <redondos@gmail.com>'
-folder-hook	.lists.lugro			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.lists.squid			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.lists.pam-mount		'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.lists.lugmen_lug-clasificados	'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
-folder-hook	.lists.milug			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
-folder-hook	.lists.lugmen_flisol.*		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
-folder-hook	.people.NComputing		'unset from; my_hdr From: Angelo Olivera <angelo@nc-company.com>"'
-# folder-hook	.people.NComputing		'unset from; my_hdr From: Angelo Olivera <angelo@nc-company.com>'
+folder-hook	.					'unmy_hdr From; set from="redondos <redondos@gmail.com>"; set realname="redondos"'
+folder-hook	'imaps://aolivera@imap.gmail.com'	'unset from; my_hdr From: Angel Olivera <aolivera@gmail.com>'
+folder-hook	.(lists|ml).*				'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
+folder-hook	.(lists|ml).mutt			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).zsh				'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).vim				'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).lugfi			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
+folder-hook	.(lists|ml).lugfi_(joda|bar)		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
+folder-hook	.(lists|ml).lugmen			'unset from; my_hdr From: redondos <redondos@gmail.com>'
+folder-hook	.(lists|ml).lugro			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).squid			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).pam-mount			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).lugmen_lug-clasificados	'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
+folder-hook	.(lists|ml).milug			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
+folder-hook	.(lists|ml).lugmen_flisol.*		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
+folder-hook	.people.NComputing			'unset from; my_hdr From: Angelo Olivera <angelo@nc-company.com>"'
+# folder-hook	.people.NComputing			'unset from; my_hdr From: Angelo Olivera <angelo@nc-company.com>'
 
 ###############################################################################
 #
@@ -49,7 +61,7 @@ folder-hook	.people.NComputing		'unset from; my_hdr From: Angelo Olivera <angelo
 
 folder-hook	.				'set sendmail="$HOME/.mutt/scripts/msmtpqueue/msmtp-enqueue.sh"'
 # folder-hook	.				'set sendmail="/usr/bin/msmtp"'
-folder-hook	.lists				'set sendmail="/usr/sbin/sendmail -oem -oi"'
+folder-hook	.(lists|ml)				'set sendmail="/usr/sbin/sendmail -oem -oi"'
 folder-hook	.ml-				'set sendmail="/usr/sbin/sendmail -oem -oi"'
 # Not needed, since using redondos@twat.com.ar now instead of gmail
 # folder-hook	=lists.mutt			'set sendmail="/usr/bin/msmtp -C /home/redondos/.msmtprc.sendmail --domain=twat.com.ar"'
@@ -61,7 +73,7 @@ folder-hook	.ml-				'set sendmail="/usr/sbin/sendmail -oem -oi"'
 ###############################################################################
 
 folder-hook	.				'unmy_hdr To'
-folder-hook	.lists.musicbrainz-users	'my_hdr To: musicbrainz-users@lists.musicbrainz.org'
+folder-hook	.(lists|ml).musicbrainz-users	'my_hdr To: musicbrainz-users@lists.musicbrainz.org'
 
 ###############################################################################
 #
@@ -81,7 +93,8 @@ folder-hook	.lists.musicbrainz-users	'my_hdr To: musicbrainz-users@lists.musicbr
 # # folder-hook     =lists.mutt			'unset record'
 # # folder-hook +(mailinglists|trash)|.maildir 'set record=+sent-mail'
 
-#folder-hook	.				'set record==Sent'
+folder-hook	'imaps://.*(twat|lugmen)'			'set record==Sent'
+folder-hook	'imaps://.*@imap.gmail.com'			set record='=[Gmail]/Sent\ Mail'
 folder-hook	.people/NComputing				set record="^"
 folder-hook	.NComputing					set record="^"
 
@@ -117,7 +130,7 @@ folder-hook	.				source ~/.mutt/sourced/macros.index_format-short
 folder-hook	.				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D   %20.20F   %s"
 folder-hook	.Spam				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?H?[%H] &[Nonspam] ?    %22.22F   %s"'
 # folder-hook	.lists				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %e/%E    %22.22F   %s"'
-folder-hook     .lists				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?e?[%3e/%-3E] ?   %22.22F   %s"'
+folder-hook     .(lists|ml-)				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?e?[%3e/%-3E] ?   %22.22F   %s"'
 
 ###############################################################################
 #
@@ -126,17 +139,28 @@ folder-hook     .lists				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?e?[%3e
 ###############################################################################
 
 folder-hook	.				'set collapse_unread'
-folder-hook	.lists				'unset collapse_unread; push <collapse-all>'				# Collapse all threads
+folder-hook	.(lists|ml)				'unset collapse_unread; push <collapse-all>'				# Collapse all threads
+
+###############################################################################
+#
+# $trash
+#
+###############################################################################
+
+folder-hook	'imaps://.*twat'				'set trash==Trash'
+folder-hook	'imaps://.*lugmen'				'set trash==Trash'
+folder-hook	'imaps://aolivera@imap.gmail.com'		'unset trash'
+folder-hook	'imaps://redondos@imap.gmail.com'		'unset trash'
+
+# folder-hook	.Trash				'macro index d <delete-message>'
+# folder-hook	.				'macro index d <save-message>=Trash<enter><limit>!~D<enter><end>'
+# folder-hook	.				'macro index d <save-message>=Trash<enter>'
 
 ###############################################################################
 #
 # Options
 #
 ###############################################################################
-
-# folder-hook	.Trash				'macro index d <delete-message>'
-# folder-hook	.				'macro index d <save-message>=Trash<enter><limit>!~D<enter><end>'
-# folder-hook	.				'macro index d <save-message>=Trash<enter>'
 
 # This is for mailing lists that manipulate the Reply-To header,
 # Made useless by ignore_list_reply_to
@@ -159,9 +183,9 @@ folder-hook	.lists				'unset collapse_unread; push <collapse-all>'				# Collapse
 #
 ###############################################################################
 
-folder-hook	.lists.arch			'push <delete-pattern>~r>1m<enter>'
-folder-hook	.lists.asterisk			'push <delete-pattern>~r>1m<enter>'
-folder-hook	.lists.mutt			'push <delete-pattern>~r>3m<enter>'
+folder-hook	.(lists|ml).arch			'push <delete-pattern>~r>1m<enter>'
+folder-hook	.(lists|ml).asterisk			'push <delete-pattern>~r>1m<enter>'
+folder-hook	.(lists|ml).mutt			'push <delete-pattern>~r>3m<enter>'
 
 ###############################################################################
 #
@@ -170,10 +194,11 @@ folder-hook	.lists.mutt			'push <delete-pattern>~r>3m<enter>'
 ###############################################################################
 
 folder-hook	.				'set crypt_verify_sig'
-folder-hook	.lists				'unset crypt_verify_sig'
+folder-hook	.(lists|ml)			'unset crypt_verify_sig'
 folder-hook	.				'unset pgp_autosign'
-folder-hook	.lists				'set pgp_autosign'
+folder-hook	.(lists|ml)			'set pgp_autosign'
 folder-hook	.				'unset pgp_autoinline'
-folder-hook	.lists.lugfi			'set pgp_autoinline'
+folder-hook	.(lists|ml).lugfi		'set pgp_autoinline'
 folder-hook	.people.NComputing		'set pgp_autosign'
+folder-hook	.NComputing			'set pgp_autosign'
 

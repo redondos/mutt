@@ -40,27 +40,20 @@ set timeout=10
 
 ## Generic
 account-hook	.	'set imap_authenticators="cram-md5:gssapi:cram-sha256:cram-sha1:login"'
-account-hook	.	'set trash==Trash'
 
 ## redondos@twat.com.ar
 account-hook	imap://.*twat.com.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh`'
-account-hook	imap://.*twat.com.ar	'set folder=imaps://refinery.twat.com.ar/ spoolfile==INBOX'
 account-hook	.	'unset smtp_authenticators smtp_pass smtp_url'
 
 ## redondos@lugmen.org.ar
 account-hook	imaps://mother.lugmen.org.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh lugmen`'
-account-hook	imaps://mother.lugmen.org.ar	'set folder=imaps://mother.lugmen.org.ar spoolfile==INBOX'
 account-hook	imaps://mother.lugmen.org.ar	'set imap_authenticators="login"'
 # account-hook	imap://lugmen.org.ar	'smtp_pass=`~/.mutt/scripts/imap_password.sh lugmen` smtp_url=smtps://redondos@lugmen.org.ar:25'
 
 ## aolivera@gmail.com
 account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
-account-hook	imaps://aolivera@imap.gmail.com	'set folder=imaps://aolivera@imap.gmail.com:993/ spoolfile==INBOX'
-account-hook	imaps://aolivera@imap.gmail.com	'unset trash'
 
 ## redondos@gmail.com
 account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
-account-hook	imaps://redondos@imap.gmail.com	'set folder=imaps://redondos@imap.gmail.com:993/ spoolfile==INBOX'
-account-hook	imaps://redondos@imap.gmail.com	'unset trash'
 
 # vi: ft=muttrc
