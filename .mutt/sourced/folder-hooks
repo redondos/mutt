@@ -119,6 +119,7 @@ folder-hook	.people.NComputing		'set sort=threads; set sort_aux=last-date-receiv
 
 folder-hook	.				'set mark_old'
 folder-hook	'!'				'unset mark_old'
+folder-hook	'.*INBOX'			'unset mark_old'
 
 ###############################################################################
 #
