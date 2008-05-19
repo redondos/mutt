@@ -80,7 +80,7 @@ folder-hook	.(lists|ml).musicbrainz-users	'my_hdr To: musicbrainz-users@lists.mu
 #
 ###############################################################################
 
-folder-hook    'imaps://.*imap.gmail.com'                     'macro index,pager S "<save-message>=[Gmail]/Spam?<enter>"    "mark message as spam"
+folder-hook    'imaps://.*imap.gmail.com'                     'macro index,pager S "<save-message>=[Gmail]/Spam<enter>"    "mark message as spam"
 folder-hook    'imaps://.*imap.gmail.com/.Gmail./Spam'        'macro index,pager H "<save-message>=!<enter>"               "mark message as ham"
 
 ###############################################################################
