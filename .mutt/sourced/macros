@@ -30,9 +30,9 @@ macro index,pager,attach,compose B "\
 # macro index,pager B '<pipe-entry>urlview<enter>' 'URLView'
 # macro index,pager \cb '<pipe-message> urlview<enter>' 'URLView'
 macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
-	<enter-command> unset pipe_decode<enter>\
-	<pipe-message>~/.mutt/scripts/extract_url.pl<enter>\
-	<enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
+<enter-command> unset pipe_decode<enter>\
+<pipe-message>~/.mutt/scripts/extract_url.pl<enter>\
+<enter-command> set pipe_decode=\$my_pdsave<enter>" "get URLs"
 
 ## From header
 macro index,pager,compose ,11 "<edit-from><kill-line>redondos <redondos@gmail.com><enter>" 		"From: redondos <redondos@gmail.com>"
