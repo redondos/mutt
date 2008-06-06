@@ -56,4 +56,7 @@ account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com i
 ## redondos@gmail.com
 account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
 
+## angelo@ncomputing.com
+account-hook	imaps://angelo@owa.ncomputing.com	'set imap_user=angelo imap_pass=`~/.mutt/scripts/imap_password.sh ncomputing.com`'
+
 # vi: ft=muttrc

@@ -103,8 +103,7 @@ folder-hook    'imaps://.*imap.gmail.com/.Gmail./Spam'        'macro index,pager
 
 folder-hook	'imaps://.*(twat|lugmen)'			'set record==Sent'
 folder-hook	'imaps://.*@imap.gmail.com'			unset record
-folder-hook	.people/NComputing				set record="^"
-folder-hook	.NComputing					set record="^"
+folder-hook	.*NComputing					set record="^"
 folder-hook	.(lists|ml)					set record='=[Gmail]/Sent\ Mail'
 
 ###############################################################################
