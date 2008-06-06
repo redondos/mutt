@@ -9,10 +9,11 @@
 #
 ###############################################################################
 
-folder-hook	'imaps://.*twat.com.ar'			'set folder=imaps://refinery.twat.com.ar/	spoolfile==INBOX'
-folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.gmail.com/	spoolfile==INBOX'
-folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/	spoolfile==INBOX'
-folder-hook	'imaps://mother.lugmen.org.ar'		'set folder=imaps://mother.lugmen.org.ar	spoolfile==INBOX'
+folder-hook	'imaps://.*twat.com.ar'			'set folder=imaps://refinery.twat.com.ar/'
+folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.gmail.com/'
+folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/'
+folder-hook	'imaps://mother.lugmen.org.ar'		'set folder=imaps://mother.lugmen.org.ar'
+folder-hook	'imaps://owa.ncomputing.com'		'set folder=imaps://owa.ncomputing.com/'
 
 ###############################################################################
 #
