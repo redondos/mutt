@@ -5,15 +5,15 @@
 
 ###############################################################################
 #
-# $folder
+# $folder, $postponed
 #
 ###############################################################################
 
-folder-hook	'imaps://.*twat.com.ar'			'set folder=imaps://refinery.twat.com.ar/'
-folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.gmail.com/'
-folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/'
-folder-hook	'imaps://mother.lugmen.org.ar'		'set folder=imaps://mother.lugmen.org.ar'
-folder-hook	'imaps://owa.ncomputing.com'		'set folder=imaps://owa.ncomputing.com/'
+folder-hook	'imaps://.*twat.com.ar'			'set folder=imaps://refinery.twat.com.ar/	postponed==Drafts'
+folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.gmail.com/	postponed==[Gmail]/Drafts'
+folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/	postponed==[Gmail]/Drafts'
+folder-hook	'imaps://.*mother.lugmen.org.ar'	'set folder=imaps://mother.lugmen.org.ar	postponed==Drafts'
+folder-hook	'imaps://.*owa.ncomputing.com'		'set folder=imaps://owa.ncomputing.com/		postponed==Drafts'
 
 ###############################################################################
 #

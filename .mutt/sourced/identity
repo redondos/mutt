@@ -15,7 +15,6 @@ set reverse_realname=no
 # set folder=imaps://refinery.twat.com.ar/
 # set spoolfile="=INBOX"
 # set spoolfile="imaps://refinery.twat.com.ar/INBOX"
-set postponed==Drafts
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/messages
 set my_mask=$mask
