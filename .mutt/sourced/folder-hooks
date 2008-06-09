@@ -140,7 +140,7 @@ folder-hook	.				source ~/.mutt/sourced/macros.index_format-short
 folder-hook	.				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D   %20.20F   %s"
 folder-hook	.Spam				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?H?[%H] &[Nonspam] ?    %22.22F   %s"'
 # folder-hook	.lists				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %e/%E    %22.22F   %s"'
-folder-hook     .(lists|ml-)				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?e?[%3e/%-3E] ?   %22.22F   %s"'
+folder-hook     .(lists|ml-)				'set index_format="%4C %Z  [%?l?%4l&%4c?]  %D %?e?[%3e/%-3E] ?   %22.22n   %s"'
 
 ###############################################################################
 #
