@@ -31,11 +31,11 @@ message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewo
 message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewords_en"		'set signature="~/.mutt/signatures/angelo.ncomputing"'
 
 ## Custom headers ##
-send-hook	'~A'	'my_hdr X-Accept-Language: en, es, es_AR'
+send-hook	'~A'	'my_hdr X-Accept-Language: en, es, es_AR, de_DE'
 send-hook	'~A'	'my_hdr X-GPG-ID: 0xDB98F72'
 send-hook	'~A'	'my_hdr X-GPG-Fingerprint: A182 F6EC 302B 8491 A563 9B28 259F F209 CDB9 8F72'
 
-send-hook	'~f redondos'	'my_hdr X-Homepage: http://www.redondos.biz'
+send-hook	'~f redondos'	'my_hdr X-Homepage: http://www.twat.com.ar'
 send-hook	'!~f redondos'	'unmy_hdr X-Homepage'
 
 send-hook	'~f redondos'	'my_hdr X-Blog: http://blog.twat.com.ar'
@@ -45,7 +45,7 @@ send-hook	'~f redondos'	'my_hdr X-Jabber-ID: redondos@lugmen.org.ar'
 send-hook	'~f aolivera !~L .*lug.*'	'my_hdr X-Jabber-ID: aolivera@gmail.com'
 send-hook	'!~f aolivera !~f redondos'	'unmy_hdr X-Jabber-ID'
 
-send-hook	'~f redondos'	'my_hdr X-MSN-ID: redondos@redondos.biz'
+send-hook	'~f redondos'	'my_hdr X-MSN-ID: redondos@gmail.com'
 send-hook	'!~f redondos'	'unmy_hdr X-MSN-ID'
 
 send-hook	'~f redondos'	'my_hdr X-AIM-ID: redondossh'
@@ -57,8 +57,6 @@ send-hook	'!~f redondos'	'unmy_hdr X-UIN'
 send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
 send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
 send-hook	'!~f redondos'	'unmy_hdr X-YIM-ID'
-
-send-hook	'~t musicbrainz' 'my_hdr From: Angel Olivera <redondos@gmail.com>'
 
 # send-hook	'~f redondos'	'my_hdr X-Operating-System: `uname -sr`
 # send-hook	'!~f redondos'	'unmy_hdr X-Operating-System`
