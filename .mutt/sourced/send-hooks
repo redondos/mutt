@@ -14,14 +14,21 @@ send-hook	'~f ^aolivera@twat.com.ar$'	'my_hdr From: Angel Olivera <aolivera@twat
 send-hook	'~f ^aolivera@gmail.com$'	'my_hdr From: Angel Olivera <aolivera@gmail.com>'
 # send-hook	'~f ^aolivera@gmail.com$'	'set from="aolivera@gmail.com"; set realname="Angel Olivera"'
 send-hook	'~f ^aolivera@gmail.com$'	'set signature="~/.mutt/signatures/angel"'
-send-hook	'~f ^angelo@nc-company.com$'	'set signature="~/.mutt/signatures/angelo"; my_hdr From: Angelo Olivera <angelo@nc-company.com>; set pgp_autosign'
-send-hook	'~f ^angelo@ncomputing.com$'	'set signature="~/.mutt/signatures/angelo"; my_hdr From: Angelo Olivera <angelo@ncomputing.com>; set pgp_autosign'
-send-hook '~t "(majordomo|subscribe)"' 'unset signature'
+send-hook	'~f ^angelo@nc-company.com$'	'my_hdr From: Angelo Olivera <angelo@nc-company.com>; set pgp_autosign'
+send-hook	'~f ^angelo@ncomputing.com$'	'my_hdr From: Angelo Olivera <angelo@ncomputing.com>; set pgp_autosign'
+send-hook	'~t "(majordomo|subscribe)"'	'unset signature'
 
-# set my_friendlywords='(~b beso|~b besit|~b abrazo|~b kiss|~b hug)' # Works too
+# Body analysis to determine signature
 set my_friendlywords='~b "(beso|besit|abrazo|kiss|hug|love)"'
+message-hook	"!~l (~L aolivera|~B '[^[:alpha:]]angel[^[:alpha:]]') $my_friendlywords"	'set signature="~/.mutt/signatures/angel.informal"'
+# set my_friendlywords='(~b beso|~b besit|~b abrazo|~b kiss|~b hug)' # Works too
 # ~b is not available with (send|reply)-hook
-message-hook	"!~l (~L aolivera|~B '[^[:alpha:]]angel[^[:alpha:]]') $my_friendlywords"			'set signature="~/.mutt/signatures/angel.informal"'
+
+set my_corporatewords_es='~b "(cordial)"'
+set my_corporatewords_en='~b "(regards)"'
+message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing)"				'set signature="~/.mutt/signatures/angelo"'
+message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewords_es"	'set signature="~/.mutt/signatures/angel.ncomputing"'
+message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewords_en"		'set signature="~/.mutt/signatures/angelo.ncomputing"'
 
 ## Custom headers ##
 send-hook	'~A'	'my_hdr X-Accept-Language: en, es, es_AR'
