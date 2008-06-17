@@ -25,6 +25,7 @@ set ignore_list_reply_to
 # Set t-prot display_filter if exists
 set my_tprot='-cemt -M=mutt'
 `~/.mutt/scripts/t-prot.sh \$my_tprot`
+set assumed_charset=iso-8859-1
 
 # set date_format="!%a, %d %b, %Y at %H:%M:%S %Z"
 # set date_format="%a, %b %d %Y %H:%M"
