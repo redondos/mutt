@@ -28,7 +28,7 @@ set my_corporatewords_es='~b "(cordial)"'
 set my_corporatewords_en='~b "(regards)"'
 message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing)"				'set signature="~/.mutt/signatures/angelo"'
 message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewords_es"	'set signature="~/.mutt/signatures/angel.ncomputing"'
-message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewords_en"		'set signature="~/.mutt/signatures/angelo.ncomputing"'
+message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing) $my_corporatewords_en"	'set signature="~/.mutt/signatures/angelo.ncomputing"'
 
 ## Custom headers ##
 send-hook	'~A'	'my_hdr X-Accept-Language: en, es, es_AR, de_DE'
