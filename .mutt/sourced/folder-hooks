@@ -121,7 +121,7 @@ folder-hook	'.*INBOX'			'set sort=date-sent'
 folder-hook	.Sent				'set sort=date-sent'
 folder-hook	.newsletters			'set sort=date-sent'
 folder-hook	.people				'set sort=date-sent'
-folder-hook	.people.NComputing		'set sort=threads; set sort_aux=last-date-received'
+folder-hook	.*omputing.*			'set sort=threads; set sort_aux=last-date-received'
 
 ###############################################################################
 #
