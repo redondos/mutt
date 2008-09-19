@@ -196,9 +196,9 @@ folder-hook	'imaps://redondos@imap.gmail.com'		'unset trash'
 #
 ###############################################################################
 
-folder-hook	.(lists|ml).arch			'push <delete-pattern>~r>1m<enter>'
-folder-hook	.(lists|ml).asterisk			'push <delete-pattern>~r>1m<enter>'
-folder-hook	.(lists|ml).mutt			'push <delete-pattern>~r>3m<enter>'
+# folder-hook	.(lists|ml).arch			'push <delete-pattern>~r>1m<enter>'
+# folder-hook	.(lists|ml).asterisk			'push <delete-pattern>~r>1m<enter>'
+# folder-hook	.(lists|ml).mutt			'push <delete-pattern>~r>3m<enter>'
 
 ###############################################################################
 #
