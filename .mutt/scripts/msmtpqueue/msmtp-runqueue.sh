@@ -39,7 +39,7 @@ for MAILFILE in *.mail; do
 		echo "FAILURE"
 		continue
 	fi
-	msmtp `cat "$MSMTPFILE"` < "$MAILFILE"
+	msmtp -d `cat "$MSMTPFILE"` < "$MAILFILE"
 	if [ $? -eq 0 ]; then
 		rm "$MAILFILE" "$MSMTPFILE"
 		echo "$MAILFILE sent successfully"
