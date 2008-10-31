@@ -78,5 +78,5 @@ mailboxes "=ml-zsh-workers"
 set folder="imaps://angelo@owa.ncomputing.com"
 mailboxes "=INBOX"
 
-unset folder
+# unset folder
 
