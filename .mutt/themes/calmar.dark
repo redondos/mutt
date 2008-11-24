@@ -1,39 +1,42 @@
-color normal       color35      color232
+color normal       white      color232
 color indicator    color226     default
-color tree         color23      default 
+color tree         color23      color232 
 color status       color48     color235
-color error        color30      default 
-color message      color50      default 
-color signature    color70      default 
-color attachment   color37      default 
-color search       color100     default 
-color tilde        color130     default 
-color markers      color138     default 
+color error        color30      color232
+color message      color50      color232
+color signature    color70      color232
+color attachment   color37      color232
+color search       color100     color232
+color tilde        color130     color232
+color markers      color138     color232
 
 #mono bold          reverse
 #color bold         color173 color191
 #mono underline     reverse
 #color underline    color48  color191
 
-color quoted        color107     default             # quoted text
-color quoted1       color66      default
-color quoted2       color32      default
-color quoted3       color30      default
-color quoted4       color99      default
-color quoted5       color36      default
-color quoted6       color114     default
-color quoted7       color109     default
-color quoted8       color41      default
-color quoted9       color138     default
+color quoted        color107     color232             # quoted text
+color quoted1       color66      color232
+color quoted2       color32      color232
+color quoted3       color30      color232
+color quoted4       color99      color232
+color quoted5       color36      color232
+color quoted6       color114     color232
+color quoted7       color109     color232
+color quoted8       color41      color232
+color quoted9       color138     color232
 # color body          cyan  default  "((ftp|http|https)://|news:)[^ >)\"\t]+"
 # color body          cyan  default  "[-a-z_0-9.+]+@[-a-z_0-9.]+"
 # color body          red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
 # color body          green default  "(^| )_[-a-z0-9_]+_[,.?]?[\n]"
 # color body          red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
 # color body          green default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
+color index         color35      color232  .
 color index         color202     default  ~F         # Flagged
-color index         color39     default  ~N          # New
-color index         color39     color234  ~O         
+color index         brightwhite     color232  ~N          # New
+color index         white        color234  ~O         
+# color index         brightcolor39     color232  ~N          # New
+# color index         color39     color234  ~O         
 color index         color229     color22  ~T         # Tagged
 color index         color240     default  ~D         # Deleted
 
