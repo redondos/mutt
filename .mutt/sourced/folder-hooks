@@ -215,3 +215,15 @@ folder-hook	.(lists|ml).lugfi		'set pgp_autoinline'
 folder-hook	.people.NComputing		'set pgp_autosign'
 folder-hook	.NComputing			'set pgp_autosign'
 
+###############################################################################
+#
+# color
+#
+###############################################################################
+
+folder-hook	.						uncolor index ~l
+folder-hook	'imaps://.*ncomputing.com'			color index white default ~l
+folder-hook	.*NComputing					color index white default ~l
+
+folder-hook	'imaps://.*ncomputing.com'			color index color39 color232 ~l
+folder-hook	.*NComputing					color index color39 color232 ~l

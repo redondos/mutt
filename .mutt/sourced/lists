@@ -73,3 +73,6 @@ subscribe wireless-org@mendoza-wireless.net.ar
 subscribe wmii@wmii.de
 subscribe zsh-users
 subscribe zsh-workers
+
+subscribe lts-dev
+subscribe tempest-dev
