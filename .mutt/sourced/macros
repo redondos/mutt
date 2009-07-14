@@ -37,16 +37,17 @@ macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
 ## From header
 macro index,pager,compose ,11 "<edit-from><kill-line>redondos <redondos@gmail.com><enter>" 		"From: redondos <redondos@gmail.com>"
 macro index,pager,compose ,12 "<edit-from><kill-line>Angel Olivera <aolivera@gmail.com><enter>"		"From: Angel Olivera <aolivera@gmail.com>"
-macro index,pager,compose ,13 "<edit-from><kill-line>Angel Olivera <redondos@gmail.com><enter>"		"From: Angel Olivera <redondos@gmail.com>"
+macro index,pager,compose ,13 "<edit-from><kill-line>Angelo Olivera <aolivera@gmail.com><enter>"		"From: Angelo Olivera <aolivera@gmail.com>"
+macro index,pager,compose ,14 "<edit-from><kill-line>Angel Olivera <redondos@gmail.com><enter>"		"From: Angel Olivera <redondos@gmail.com>"
 
 macro index,pager,compose ,21 "<edit-from><kill-line>redondos <redondos@twat.com.ar><enter>" 		"From: redondos <redondos@twat.com.ar>"
 macro index,pager,compose ,22 "<edit-from><kill-line>Angel Olivera <redondos@twat.com.ar><enter>" 	"From: Angel Olivera <redondos@twat.com.ar>"
 macro index,pager,compose ,23 "<edit-from><kill-line>redondos <redondos@lugmen.org.ar><enter>" 		"From: redondos <redondos@lugmen.org.ar>"
 macro index,pager,compose ,24 "<edit-from><kill-line>Angel Olivera <aolivera@aolivera.com.ar><enter>" 	"From: Angel Olivera <aolivera@aolivera.com.ar>"
 
-macro index,pager,compose ,31 "<edit-from><kill-line>Angelo Olivera <angelo@nc-company.com><enter>" 	"From: Angelo Olivera <angelo@nc-company.com>"
-macro index,pager,compose ,32 "<edit-from><kill-line>Angelo Olivera <angelo@ncomputing.com><enter>" 	"From: Angelo Olivera <angelo@ncomputing.com>"
-macro index,pager,compose ,33 "<edit-from><kill-line>Angelo Olivera <aolivera@ncomputing.com><enter>" 	"From: Angelo Olivera <aolivera@ncomputing.com>"
+macro index,pager,compose ,31 "<edit-from><kill-line>Angelo Olivera <angelo@ncomputing.com><enter>" 	"From: Angelo Olivera <angelo@ncomputing.com>"
+macro index,pager,compose ,32 "<edit-from><kill-line>Angelo Olivera <angelo@nc-company.com><enter>" 	"From: Angelo Olivera <angelo@nc-company.com>"
+macro index,pager,compose ,32 "<edit-from><kill-line>Angelo Olivera <aolivera@ncomputing.com><enter>" 	"From: Angelo Olivera <aolivera@ncomputing.com>"
 
 ## Trash
 # macro index d "<save-message>=Trash<enter><limit>!~D<enter><end>"
