@@ -55,20 +55,20 @@ bind pager   "\Cx\Cf" change-folder
 # bind index	t	reply
 #
 # Sidebar
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open
-bind pager <control><enter> sidebar-open
-bind index B bounce-message
-bind index '{'	sidebar-prev
-bind index '}'	sidebar-next
-bind index '+' sidebar-open
-bind pager '{'	sidebar-prev
-bind pager '}'	sidebar-next
-bind pager '+' sidebar-open
+# bind index \CP sidebar-prev
+# bind index \CN sidebar-next
+# bind index \CO sidebar-open
+# bind pager \CP sidebar-prev
+# bind pager \CN sidebar-next
+# bind pager \CO sidebar-open
+# bind pager <control><enter> sidebar-open
+# bind index B bounce-message
+# bind index '{'	sidebar-prev
+# bind index '}'	sidebar-next
+# bind index '+' sidebar-open
+# bind pager '{'	sidebar-prev
+# bind pager '}'	sidebar-next
+# bind pager '+' sidebar-open
 
 bind editor <tab> complete-query
 bind pager	j	next-line

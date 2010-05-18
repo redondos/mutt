@@ -49,8 +49,8 @@ unset wait_key				# Don't prompt for a key press after shell-escape and the like
 set folder_format="%2C %s %d %t %2N   %f"
 
 ## Sidebar
-set sidebar_width=50
-set sidebar_visible=yes
-# set sidebar_position=1
-set sidebar_delim=|
+# set sidebar_width=50
+# set sidebar_visible=yes
+# # set sidebar_position=1
+# set sidebar_delim=|
 
