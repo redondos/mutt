@@ -52,6 +52,7 @@ folder-hook	.(lists|ml).lugmen_lug-clasificados	'unset from; my_hdr From: Angel 
 folder-hook	.(lists|ml).milug			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
 folder-hook	.(lists|ml).lugmen_flisol.*		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
 folder-hook	.people.NComputing			'unset from; my_hdr From: Angelo Olivera <angelo@nc-company.com>"'
+folder-hook	.sfuwh                    'unset from; my_hdr From: Angelo Olivera <aolivera@gmail.com>"'
 # folder-hook	.people.NComputing			'unset from; my_hdr From: Angelo Olivera <angelo@nc-company.com>'
 
 ###############################################################################

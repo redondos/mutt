@@ -7,6 +7,7 @@
 set folder="imaps://aolivera@imap.gmail.com"
 mailboxes "=INBOX"
 mailboxes "=NComputing"
+mailboxes "=sfuwh"
 
 set folder="imaps://redondos@imap.gmail.com"
 # mailboxes !
