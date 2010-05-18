@@ -17,6 +17,7 @@ source ~/.mutt/sourced/headers			# Customize header display
 source ~/.mutt/sourced/lists			# Mailing lists (subscribed or not)
 source ~/.mutt/sourced/macros			# Macros.
 source ~/.mutt/sourced/mailboxes		# Mailboxes that receive mail
+source ~/.mutt/sourced/mailboxes.offlineimap		# Mailboxes that receive mail
 source ~/.mutt/sourced/options			# Options.
 source ~/.mutt/sourced/other-hooks		# Other hooks
 source ~/.mutt/sourced/save-hooks		# Auto-select save folders
