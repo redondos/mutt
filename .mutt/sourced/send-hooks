@@ -11,19 +11,28 @@ send-hook	.*				'set signature="~/.signature"'
 send-hook	'~f ^redondos@twat.com.ar$'	'my_hdr From: redondos <redondos@twat.com.ar>'
 send-hook	'~f ^redondos@myrealbox.com$'	'my_hdr From: redondos <redondos@myrealbox.com>'
 send-hook	'~f ^aolivera@twat.com.ar$'	'my_hdr From: Angel Olivera <aolivera@twat.com.ar>'
-send-hook	'~f ^aolivera@gmail.com$'	'my_hdr From: Angel Olivera <aolivera@gmail.com>'
+send-hook	'~f ^aolivera@gmail.com$'	'my_hdr From: Angelo Olivera <aolivera@gmail.com>'
 # send-hook	'~f ^aolivera@gmail.com$'	'set from="aolivera@gmail.com"; set realname="Angel Olivera"'
-send-hook	'~f ^aolivera@gmail.com$'	'set signature="~/.mutt/signatures/angel"'
+send-hook	'~f ^aolivera@gmail.com$'	'set signature="~/.mutt/signatures/angelo"'
 send-hook	'~f ^angelo@nc-company.com$'	'my_hdr From: Angelo Olivera <angelo@nc-company.com>; set pgp_autosign'
 send-hook	'~f ^angelo@ncomputing.com$'	'my_hdr From: Angelo Olivera <angelo@ncomputing.com>; set pgp_autosign'
 send-hook	'~t "(majordomo|subscribe)"'	'unset signature'
 
-# Body analysis to determine signature
+## Body analysis to determine signature
 set my_friendlywords='~b "(beso|besit|abrazo|kiss|hug|love)"'
 message-hook	"!~l (~L aolivera|~B '[^[:alpha:]]angel[^[:alpha:]]') $my_friendlywords"	'set signature="~/.mutt/signatures/angel.informal"'
 # set my_friendlywords='(~b beso|~b besit|~b abrazo|~b kiss|~b hug)' # Works too
-# ~b is not available with (send|reply)-hook
+# ~b/~B are not available with (send|reply)-hook, and my_hdr doesn't belong in message-hook
+message-hook '~h angelo' 'set signature="~/.mutt/signatures/angelo"'
+message-hook '~B "(cheers|hello|kiss|[Aa]ngelo)"' 'set signature="~/.mutt/signatures/angelo"'
 
+## failed test to rewrite the From header with a message-hook:
+## it doesn't work because mutt should chcek the value of my_from before using it
+# message-hook .    "unset my_from"
+# message-hook '~B Yeah' 'set signature="~/.mutt/signatures/angelo"; set my_from=foo'
+# send-hook . "my_hdr From: \$my_from"
+
+## Work accounts
 set my_corporatewords_es='~b "(cordial)"'
 set my_corporatewords_en='~b "(regards)"'
 message-hook	"!~l (~L \"(ncomputing|nc-company)\"|~B ncomputing)"				'set signature="~/.mutt/signatures/angelo"'
