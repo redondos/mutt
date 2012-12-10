@@ -111,7 +111,7 @@ macro index,pager 'I'	'<change-folder>!<enter>' 'load the inbox'
 
 ## Sendmail
 # macro index,pager,compose ',S' '<enter-command> set sendmail="/usr/bin/msmtp" sendmail<enter>' 'sendmail: msmtprc'
-macro index,pager,compose ',S' '<enter-command> set sendmail="$HOME/.mutt/scripts/msmtpqueue/msmtp-enqueue.sh" sendmail<enter>' 'sendmail: msmtprc'
+macro index,pager,compose ',S' '<enter-command> set sendmail="$HOME/.mutt/scripts/msmtpq/msmtp-queue" sendmail<enter>' 'sendmail: msmtprc'
 macro index,pager,compose ',s' '<enter-command> set sendmail="/usr/bin/msmtp -C /home/redondos/.msmtprc.localhost" sendmail<enter>' 'sendmail: msmtprc.localhost'
 
 ## Search mail

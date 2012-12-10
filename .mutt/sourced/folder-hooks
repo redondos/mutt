@@ -61,7 +61,7 @@ folder-hook	.sfuwh                    'unset from; my_hdr From: Angelo Olivera <
 #
 ###############################################################################
 
-folder-hook	.				'set sendmail="$HOME/.mutt/scripts/msmtpqueue/msmtp-enqueue.sh"'
+folder-hook	.				'set sendmail="$HOME/.mutt/scripts/msmtpq/msmtpq"'
 # folder-hook	.				'set sendmail="/usr/bin/msmtp"'
 folder-hook	.(lists|ml)			'set sendmail="/usr/sbin/sendmail -oem -oi"'
 # Not needed, since using redondos@twat.com.ar now instead of gmail
