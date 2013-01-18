@@ -47,15 +47,15 @@ account-hook	imap://.*twat.com.ar	'set imap_user=redondos imap_pass=`~/.mutt/scr
 account-hook	.	'unset smtp_authenticators smtp_pass smtp_url'
 
 ## redondos@lugmen.org.ar
-account-hook	imaps://mother.lugmen.org.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh lugmen`'
+account-hook	imaps://mother.lugmen.org.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh redondos@lugmen.org.ar`'
 account-hook	imaps://mother.lugmen.org.ar	'set imap_authenticators="login"'
 # account-hook	imap://lugmen.org.ar	'smtp_pass=`~/.mutt/scripts/imap_password.sh lugmen` smtp_url=smtps://redondos@lugmen.org.ar:25'
 
 ## aolivera@gmail.com
-account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
+account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh aolivera@gmail.com`'
 
 ## redondos@gmail.com
-account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh gmail`'
+account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh redondos@gmail.com`'
 
 ## angelo@ncomputing.com
 account-hook	imaps://angelo@owa.ncomputing.com	'set imap_user=angelo imap_pass=`~/.mutt/scripts/imap_password.sh ncomputing.com`'
