@@ -8,7 +8,7 @@
 # send-hook	.*				'my_hdr From: redondos <redondos@gmail.com>'
 # send-hook	.*				'set from="redondos <redondos@gmail.com>"'
 send-hook	.*				'set signature="~/.signature"'
-send-hook	'~f ^redondos@twat.com.ar$'	'my_hdr From: redondos <redondos@twat.com.ar>'
+# send-hook	'~f ^redondos@twat.com.ar$'	'my_hdr From: redondos <redondos@twat.com.ar>'
 send-hook	'~f ^redondos@myrealbox.com$'	'my_hdr From: redondos <redondos@myrealbox.com>'
 send-hook	'~f ^aolivera@twat.com.ar$'	'my_hdr From: Angel Olivera <aolivera@twat.com.ar>'
 send-hook	'~f ^aolivera@gmail.com$'	'my_hdr From: Angelo Olivera <aolivera@gmail.com>'
@@ -44,27 +44,27 @@ send-hook	'~A'	'my_hdr X-Accept-Language: en, es, es_AR, de_DE'
 send-hook	'~A'	'my_hdr X-GPG-ID: 0xDB98F72'
 send-hook	'~A'	'my_hdr X-GPG-Fingerprint: A182 F6EC 302B 8491 A563 9B28 259F F209 CDB9 8F72'
 
-send-hook	'~f redondos'	'my_hdr X-Homepage: http://www.twat.com.ar'
+# send-hook	'~f redondos'	'my_hdr X-Homepage: http://www.twat.com.ar'
 send-hook	'!~f redondos'	'unmy_hdr X-Homepage'
 
-send-hook	'~f redondos'	'my_hdr X-Blog: http://blog.twat.com.ar'
+# send-hook	'~f redondos'	'my_hdr X-Blog: http://blog.twat.com.ar'
 send-hook	'!~f redondos'	'unmy_hdr X-Blog'
 
 send-hook	'~f redondos'	'my_hdr X-Jabber-ID: redondos@lugmen.org.ar'
 send-hook	'~f aolivera !~L .*lug.*'	'my_hdr X-Jabber-ID: aolivera@gmail.com'
 send-hook	'!~f aolivera !~f redondos'	'unmy_hdr X-Jabber-ID'
 
-send-hook	'~f redondos'	'my_hdr X-MSN-ID: redondos@gmail.com'
+# send-hook	'~f redondos'	'my_hdr X-MSN-ID: redondos@gmail.com'
 send-hook	'!~f redondos'	'unmy_hdr X-MSN-ID'
 
-send-hook	'~f redondos'	'my_hdr X-AIM-ID: redondossh'
+# send-hook	'~f redondos'	'my_hdr X-AIM-ID: redondossh'
 send-hook	'!~f redondos'	'unmy_hdr X-AIM-ID'
 
-send-hook	'~f redondos'	'my_hdr X-UIN: 11943866'
+# send-hook	'~f redondos'	'my_hdr X-UIN: 11943866'
 send-hook	'!~f redondos'	'unmy_hdr X-UIN'
 
-send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
-send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
+# send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
+# send-hook	'~f redondos'	'my_hdr X-YIM-ID: redondossh'
 send-hook	'!~f redondos'	'unmy_hdr X-YIM-ID'
 
 # send-hook	'~f redondos'	'my_hdr X-Operating-System: `uname -sr`
