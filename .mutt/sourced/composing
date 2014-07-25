@@ -16,7 +16,7 @@ set sendmail_wait=-1			# Don't wait around for sendmail.
 #set sendmail="$HOME/.mutt/scripts/msmtpqueue/msmtp-enqueue.sh"		# Use msmtp
 #set sendmail="/usr/bin/msmtp"		# Use msmtp
 set signature="~/.signature"
-set dotlock_program=/usr/bin/mutt_dotlock
+# set dotlock_program=/usr/bin/mutt_dotlock
 # Recommended crap from msmtp man page that I don't need.
 # set use_from=yes
 # set realname="redondos--"

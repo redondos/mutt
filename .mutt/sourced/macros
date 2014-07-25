@@ -25,7 +25,7 @@ macro index,pager ',G' "<pipe-entry>ssh twat.com.ar bogofilter -c ~/.bogofilter/
 macro index,pager,attach,compose B "\
 	<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
 	<pipe-message> urlview<Enter>\
-	<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
+	<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<En/dev/null<Enter>" \
 	"call urlview to extract URLs out of a message"
 # macro index,pager B '<pipe-entry>urlview<enter>' 'URLView'
 # macro index,pager \cb '<pipe-message> urlview<enter>' 'URLView'
@@ -90,20 +90,14 @@ macro index,pager ',c' '<enter-command>set mask=$my_mask<enter>\
 
 # Change account
 bind generic a noop
-# macro index,pager 'a1' 'set spoolfile=imaps://refinery.twat.com.ar<enter>; <change-folder>!<enter>'	'account: redondos@twat.com.ar'
-# macro index,pager 'a2' 'set spoolfile=imaps://lugmen.org.ar<enter>; <change-folder>!<enter>'	'account: redondos@lugmen.org.ar'
-# macro index,pager 'a3' 'set spoolfile=imaps:///aolivera@imap.gmail.com:993/<enter>; <change-folder>!<enter>'	'account: aolivera@gmail.com'
-# macro index,pager 'a4' 'set spoolfile=imaps:///redondos@imap.gmail.com:993/<enter>; <change-folder>!<enter>'	'account: redondos@gmail.com'
-macro index,pager 'a1' '<change-folder>imaps://refinery.twat.com.ar/INBOX<enter>'	'account: redondos@twat.com.ar'
-macro index,pager 'a2' '<change-folder>imaps://lugmen.org.ar<enter>'			'account: redondos@lugmen.org.ar'
-macro index,pager 'a3' '<change-folder>imaps://aolivera@imap.gmail.com<enter>'		'account: aolivera@gmail.com'
-macro index,pager 'a4' '<change-folder>imaps://redondos@imap.gmail.com<enter>'		'account: redondos@gmail.com'
+macro index,pager 'a1' '<change-folder>imaps://imap.gmail.com/<enter>'	# 'account: aolivera@mongodb.com'
+macro index,pager 'a2' '<change-folder>imaps://aolivera@imap.gmail.com<enter>'		'account: aolivera@gmail.com'
+macro index,pager 'a3' '<change-folder>imaps://redondos@imap.gmail.com<enter>'		'account: redondos@gmail.com'
 
 # Open in a different IMAP server
-macro index,pager ',c1' '<change-folder>?<change-dir><kill-line>imaps://refinery.twat.com.ar<enter>'	'account: redondos@twat.com.ar'
-macro index,pager ',c2' '<change-folder>?<change-dir><kill-line>imaps://lugmen.org.ar<enter>'		'account: redondos@lugmen.org.ar'
-macro index,pager ',c3' '<change-folder>?<change-dir><kill-line>imaps://aolivera@imap.gmail.com:993/<enter>'		'account: aolivera@gmail.com'
-macro index,pager ',c4' '<change-folder>?<change-dir><kill-line>imaps://redondos@imap.gmail.com:993/<enter>'		'account: redondos@gmail.com'
+macro index,pager ',c1' '<change-folder>?<change-dir><kill-line>imaps://angelo.olivera@imap.gmail.com<enter>'	'account: aolivera@mongodb.com'
+macro index,pager ',c2' '<change-folder>?<change-dir><kill-line>imaps://aolivera@imap.gmail.com:993/<enter>'		'account: aolivera@gmail.com'
+macro index,pager ',c3' '<change-folder>?<change-dir><kill-line>imaps://redondos@imap.gmail.com:993/<enter>'		'account: redondos@gmail.com'
 
 
 # Load the inbox

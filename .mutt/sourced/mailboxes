@@ -4,6 +4,10 @@
 # receive incoming mail).
 #
 
+# work
+set folder="imaps://imap.gmail.com"
+mailboxes "=INBOX"
+
 set folder="imaps://aolivera@imap.gmail.com"
 mailboxes "=INBOX"
 mailboxes "=delanceyplace"
@@ -82,7 +86,4 @@ mailboxes "=news-wordsmith"
 # mailboxes "=ml-wmii"
 # mailboxes "=ml-zsh-users"
 # mailboxes "=ml-zsh-workers"
-# 
-# # set folder="imaps://angelo@owa.ncomputing.com"
-# # mailboxes "=INBOX"
-# 
+#

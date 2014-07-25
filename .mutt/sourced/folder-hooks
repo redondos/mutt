@@ -14,14 +14,15 @@ folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.
 folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/	postponed==[Gmail]/Drafts'
 folder-hook	'imaps://.*mother.lugmen.org.ar'	'set folder=imaps://mother.lugmen.org.ar	postponed==Drafts'
 folder-hook	'imaps://.*owa.ncomputing.com'		'set folder=imaps://owa.ncomputing.com/		postponed==Drafts'
+folder-hook	'imaps://angelo.olivera@imap.gmail.com'	'set folder=imaps://angelo.olivera@imap.gmail.com/	postponed==[Gmail]/Drafts'
 
 ###############################################################################
 #
 # "From" header manipulation ##
 #
 ###############################################################################
-
 # I keep forgetting how this works, so I'm going to have to document it.
+
 # The From header is first selected here. This is the default.
 # Only when replying from inside a "lists.*" folder it uses the same 
 # address but with realname.
@@ -36,18 +37,19 @@ folder-hook	'imaps://.*owa.ncomputing.com'		'set folder=imaps://owa.ncomputing.c
 # from address should be changed.
 # folder-hook	.				'my_hdr From: redondos <redondos@gmail.com>'
 
-folder-hook	.					'unmy_hdr From; set from="redondos <redondos@gmail.com>"; set realname="redondos"'
-folder-hook	'imaps://aolivera@imap.gmail.com'	'unset from; my_hdr From: Angel Olivera <aolivera@gmail.com>'
-folder-hook	.(lists|ml).*				'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
-folder-hook	.(lists|ml).mutt			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.(lists|ml).zsh				'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.(lists|ml).vim				'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.       	                                'unset from; my_hdr From: Angelo Olivera <aolivera@mongodb.com>'
+folder-hook	'imaps://redondos@imap.gmail.com'					'unset my_hdr From; set from="redondos <redondos@gmail.com>"; set realname="redondos"'
+folder-hook	'imaps://aolivera@imap.gmail.com'	        'unset from; my_hdr From: Angelo Olivera <aolivera@gmail.com>'
+folder-hook	.(lists|ml).*				                      'unset from; my_hdr From: Angelo Olivera <redondos@gmail.com>'
+folder-hook	.(lists|ml).mutt			'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).zsh				'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).vim				'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'
 folder-hook	.(lists|ml).lugfi			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
 folder-hook	.(lists|ml).lugfi_(joda|bar)		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
 folder-hook	.(lists|ml).lugmen			'unset from; my_hdr From: redondos <redondos@gmail.com>'
 folder-hook	.(lists|ml).lugro			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.(lists|ml).squid			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
-folder-hook	.(lists|ml).pam-mount			'unset from; my_hdr From: Angel Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).squid			'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'
+folder-hook	.(lists|ml).pam-mount			'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'
 folder-hook	.(lists|ml).lugmen_lug-clasificados	'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
 folder-hook	.(lists|ml).milug			'unset from; my_hdr From: Angel Olivera <redondos@gmail.com>'
 folder-hook	.(lists|ml).lugmen_flisol.*		'unset from; my_hdr From: Angel Olivera <redondos@lugmen.org.ar>'
@@ -61,9 +63,12 @@ folder-hook	.sfuwh                    'unset from; my_hdr From: Angelo Olivera <
 #
 ###############################################################################
 
-folder-hook	.				'set sendmail="$HOME/.mutt/scripts/msmtpq/msmtpq"'
+#folder-hook . 'unset sendmail'
+#folder-hook .       'set smtp_url=@smtp.gmail.com:587'
+#folder-hook .       'set smtp_pass=`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`'
+#folder-hook	.				'set sendmail="$HOME/.mutt/scripts/msmtpq/msmtpq"'
 # folder-hook	.				'set sendmail="/usr/bin/msmtp"'
-folder-hook	.(lists|ml)			'set sendmail="/usr/sbin/sendmail -oem -oi"'
+#folder-hook	.(lists|ml)			'set sendmail="/usr/sbin/sendmail -oem -oi"'
 # Not needed, since using redondos@twat.com.ar now instead of gmail
 # folder-hook	=lists.mutt			'set sendmail="/usr/bin/msmtp -C /home/redondos/.msmtprc.sendmail --domain=twat.com.ar"'
 
@@ -163,10 +168,10 @@ folder-hook	.(lists|ml)				'unset collapse_unread; push <collapse-all>'				# Col
 #
 ###############################################################################
 
-folder-hook	'imaps://.*twat'				'set trash==Trash'
-folder-hook	'imaps://.*lugmen'				'set trash==Trash'
-folder-hook	'imaps://aolivera@imap.gmail.com'		'unset trash'
-folder-hook	'imaps://redondos@imap.gmail.com'		'unset trash'
+#folder-hook	'imaps://.*twat'				'set trash==Trash'
+#folder-hook	'imaps://.*lugmen'				'set trash==Trash'
+#folder-hook	'imaps://aolivera@imap.gmail.com'		'unset trash'
+#folder-hook	'imaps://redondos@imap.gmail.com'		'unset trash'
 
 # folder-hook	.Trash				'macro index d <delete-message>'
 # folder-hook	.				'macro index d <save-message>=Trash<enter><limit>!~D<enter><end>'

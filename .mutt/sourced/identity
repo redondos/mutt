@@ -7,14 +7,14 @@
 alternates "redondos@gmail.com|aolivera@gmail.com|redondos@redondos.biz|\
 redondos@myrealbox.com|redondos@lugmen.org.ar|aolivera@hotpop.com|\
 redondos@twat.com.ar|aolivera@twat.com.ar|redondos@aolivera.com.ar|\
-aolivera@aolivera.com.ar|angelo@nc-company.com|a(ngelo|olivera)@ncomputing.com"
+aolivera@aolivera.com.ar|angelo@nc-company.com|a(ngelo|olivera)@ncomputing.com|\
+olivera@telmate.com|aolivera@telmate.com|\
+aolivera@mongodb.com|aolivera@10gen.com|angelo.olivera@mongodb.com|angelo.olivera@10gen.com"
 set reverse_name=yes
 set reverse_realname=no
 
 ### Folders
-# set folder=imaps://refinery.twat.com.ar/
-# set spoolfile="=INBOX"
-# set spoolfile="imaps://refinery.twat.com.ar/INBOX"
+set spoolfile="/dev/null"
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/messages
 set my_mask=$mask
@@ -44,7 +44,7 @@ account-hook	.	'set imap_authenticators="cram-md5:gssapi:cram-sha256:cram-sha1:l
 
 ## redondos@twat.com.ar
 account-hook	imap://.*twat.com.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh`'
-account-hook	.	'unset smtp_authenticators smtp_pass smtp_url'
+#account-hook	.	'unset smtp_authenticators smtp_pass smtp_url'
 
 ## redondos@lugmen.org.ar
 account-hook	imaps://mother.lugmen.org.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh redondos@lugmen.org.ar`'
@@ -52,12 +52,16 @@ account-hook	imaps://mother.lugmen.org.ar	'set imap_authenticators="login"'
 # account-hook	imap://lugmen.org.ar	'smtp_pass=`~/.mutt/scripts/imap_password.sh lugmen` smtp_url=smtps://redondos@lugmen.org.ar:25'
 
 ## aolivera@gmail.com
-account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh aolivera@gmail.com`'
+account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass="`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`"
+account-hook	imaps://aolivera@imap.gmail.com	'set smtp_url=smtp://aolivera@smtp.gmail.com:587 smtp_pass="`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`"
 
 ## redondos@gmail.com
-account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass=`~/.mutt/scripts/imap_password.sh redondos@gmail.com`'
+account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass="`/usr/bin/security -q find-internet-password -g -a redondos@gmail.com -s imap.gmail.com -w`"
 
-## angelo@ncomputing.com
-account-hook	imaps://angelo@owa.ncomputing.com	'set imap_user=angelo imap_pass=`~/.mutt/scripts/imap_password.sh ncomputing.com`'
+## MongoDB
+account-hook  imaps://imap.gmail.com 'set imap_user=angelo.olivera@10gen.com imap_pass="`/usr/bin/security -q find-internet-password -g -a angelo.olivera@10gen.com -s imap.gmail.com -w`"
+account-hook  imaps://[angelo.olivera@10gen.com]@imap.gmail.com 'set imap_user=angelo.olivera@10gen.com imap_pass="`/usr/bin/security -q find-internet-password -g -a angelo.olivera@10gen.com -s imap.gmail.com -w`"
+account-hook	imaps://[angelo.olivera@10gen.com]@imap.gmail.com	'set smtp_url=smtp://[angelo.olivera@10gen.com]@smtp.gmail.com:587 smtp_pass="`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`"
+#set folder=imaps://angelo.olivera@imap.gmail.com/
 
 # vi: ft=muttrc
