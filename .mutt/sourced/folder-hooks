@@ -9,12 +9,9 @@
 #
 ###############################################################################
 
-folder-hook	'imaps://.*twat.com.ar'			'set folder=imaps://refinery.twat.com.ar/	postponed==Drafts'
 folder-hook	'imaps://aolivera@imap.gmail.com'	'set folder=imaps://aolivera@imap.gmail.com/	postponed==[Gmail]/Drafts'
 folder-hook	'imaps://redondos@imap.gmail.com'	'set folder=imaps://redondos@imap.gmail.com/	postponed==[Gmail]/Drafts'
-folder-hook	'imaps://.*mother.lugmen.org.ar'	'set folder=imaps://mother.lugmen.org.ar	postponed==Drafts'
-folder-hook	'imaps://.*owa.ncomputing.com'		'set folder=imaps://owa.ncomputing.com/		postponed==Drafts'
-folder-hook	'imaps://angelo.olivera@imap.gmail.com'	'set folder=imaps://angelo.olivera@imap.gmail.com/	postponed==[Gmail]/Drafts'
+folder-hook  imaps://angelo.olivera@10gen.com@imap.gmail.com 'set folder="imaps://angelo.olivera@10gen.com@imap.gmail.com" postponed==[Gmail]/Drafts'
 
 ###############################################################################
 #
@@ -37,9 +34,9 @@ folder-hook	'imaps://angelo.olivera@imap.gmail.com'	'set folder=imaps://angelo.o
 # from address should be changed.
 # folder-hook	.				'my_hdr From: redondos <redondos@gmail.com>'
 
-folder-hook	.       	                                'unset from; my_hdr From: Angelo Olivera <aolivera@mongodb.com>'
+folder-hook imaps://angelo.olivera@10gen.com@imap.gmail.com 'unset from; my_hdr From: Angelo Olivera <aolivera@mongodb.com>'
+folder-hook imaps://aolivera@imap.gmail.com	'unset from; my_hdr From: Angelo Olivera <aolivera@gmail.com>'
 folder-hook	'imaps://redondos@imap.gmail.com'					'unset my_hdr From; set from="redondos <redondos@gmail.com>"; set realname="redondos"'
-folder-hook	'imaps://aolivera@imap.gmail.com'	        'unset from; my_hdr From: Angelo Olivera <aolivera@gmail.com>'
 folder-hook	.(lists|ml).*				                      'unset from; my_hdr From: Angelo Olivera <redondos@gmail.com>'
 folder-hook	.(lists|ml).mutt			'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'
 folder-hook	.(lists|ml).zsh				'unset from; my_hdr From: Angelo Olivera <redondos@twat.com.ar>'

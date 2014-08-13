@@ -87,3 +87,4 @@ mailboxes "=news-wordsmith"
 # mailboxes "=ml-zsh-users"
 # mailboxes "=ml-zsh-workers"
 #
+set folder="imaps://angelo.olivera@10gen.com@imap.gmail.com"

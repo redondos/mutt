@@ -22,13 +22,13 @@ macro index,pager ',g' '<pipe-entry>ssh twat.com.ar bogofilter -c ~/.bogofilter/
 macro index,pager ',G' "<pipe-entry>ssh twat.com.ar bogofilter -c ~/.bogofilter/groucho/groucho.cf -Sn<enter>"		"unlearn as grouchesque"
 
 ## URLView
-macro index,pager,attach,compose B "\
-	<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
-	<pipe-message> urlview<Enter>\
-	<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<En/dev/null<Enter>" \
-	"call urlview to extract URLs out of a message"
-# macro index,pager B '<pipe-entry>urlview<enter>' 'URLView'
-# macro index,pager \cb '<pipe-message> urlview<enter>' 'URLView'
+#macro index,pager,attach,compose B "\
+	#<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
+	#<pipe-message> urlview<Enter>\
+	#<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
+	#"call urlview to extract URLs out of a message"
+ #macro index,pager B '<pipe-entry>urlview<enter>' 'URLView'
+ macro index,pager \cb '<pipe-message> urlview<enter>' 'URLView'
 macro index,pager \cb "<enter-command> set my_pdsave=\$pipe_decode<enter>\
 <enter-command> unset pipe_decode<enter>\
 <pipe-message>~/.mutt/scripts/extract_url.pl<enter>\
@@ -90,7 +90,8 @@ macro index,pager ',c' '<enter-command>set mask=$my_mask<enter>\
 
 # Change account
 bind generic a noop
-macro index,pager 'a1' '<change-folder>imaps://imap.gmail.com/<enter>'	# 'account: aolivera@mongodb.com'
+#macro index,pager 'a1' '<change-folder>imaps://imap.gmail.com/<enter>'	# 'account: aolivera@mongodb.com'
+macro index,pager 'a1' '<change-folder>imaps://angelo.olivera@10gen.com@imap.gmail.com/<enter>'	# 'account: aolivera@mongodb.com'
 macro index,pager 'a2' '<change-folder>imaps://aolivera@imap.gmail.com<enter>'		'account: aolivera@gmail.com'
 macro index,pager 'a3' '<change-folder>imaps://redondos@imap.gmail.com<enter>'		'account: redondos@gmail.com'
 

@@ -22,9 +22,9 @@ set my_mask=$mask
 
 ### Options
 set beep_new
-# set query_command=muttquery.py
-# set query_command="lbdbq %s"
-set query_command="~/.mutt/scripts/goobook/contactos.py"
+set query_command="goobook -c ~/.mutt/sourced/goobookrc query"
+macro index,pager A "<pipe-message>goobook  -c ~/.mutt/sourced/goobookrc add<return>" "add the sender address to Google contacts"
+
 
 ### IMAP
 #unset imap_passive
@@ -39,29 +39,14 @@ unset imap_check_subscribed
 
 ### IMAP accounts
 
-## Generic
-account-hook	.	'set imap_authenticators="cram-md5:gssapi:cram-sha256:cram-sha1:login"'
+unset record
+set folder="imaps://angelo.olivera@10gen.com@imap.gmail.com"
+set spoolfile="imaps://angelo.olivera@10gen.com@imap.gmail.com"
 
-## redondos@twat.com.ar
-account-hook	imap://.*twat.com.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh`'
-#account-hook	.	'unset smtp_authenticators smtp_pass smtp_url'
+account-hook  imaps://angelo.olivera@10gen.com@imap.gmail.com 'set imap_user=angelo.olivera@10gen.com imap_pass="`/usr/bin/security -q find-internet-password -g -a angelo.olivera@10gen.com -s imap.gmail.com -w`"
+account-hook  imaps://angelo.olivera@10gen.com@imap.gmail.com 'set smtp_url=smtp://angelo.olivera@10gen.com@smtp.gmail.com:587 smtp_pass="`/usr/bin/security -q find-internet-password -g -a angelo.olivera@10gen.com -s imap.gmail.com -w`"
 
-## redondos@lugmen.org.ar
-account-hook	imaps://mother.lugmen.org.ar	'set imap_user=redondos imap_pass=`~/.mutt/scripts/imap_password.sh redondos@lugmen.org.ar`'
-account-hook	imaps://mother.lugmen.org.ar	'set imap_authenticators="login"'
-# account-hook	imap://lugmen.org.ar	'smtp_pass=`~/.mutt/scripts/imap_password.sh lugmen` smtp_url=smtps://redondos@lugmen.org.ar:25'
-
-## aolivera@gmail.com
 account-hook	imaps://aolivera@imap.gmail.com	'set imap_user=aolivera@gmail.com imap_pass="`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`"
 account-hook	imaps://aolivera@imap.gmail.com	'set smtp_url=smtp://aolivera@smtp.gmail.com:587 smtp_pass="`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`"
-
-## redondos@gmail.com
-account-hook	imaps://redondos@imap.gmail.com	'set imap_user=redondos@gmail.com imap_pass="`/usr/bin/security -q find-internet-password -g -a redondos@gmail.com -s imap.gmail.com -w`"
-
-## MongoDB
-account-hook  imaps://imap.gmail.com 'set imap_user=angelo.olivera@10gen.com imap_pass="`/usr/bin/security -q find-internet-password -g -a angelo.olivera@10gen.com -s imap.gmail.com -w`"
-account-hook  imaps://[angelo.olivera@10gen.com]@imap.gmail.com 'set imap_user=angelo.olivera@10gen.com imap_pass="`/usr/bin/security -q find-internet-password -g -a angelo.olivera@10gen.com -s imap.gmail.com -w`"
-account-hook	imaps://[angelo.olivera@10gen.com]@imap.gmail.com	'set smtp_url=smtp://[angelo.olivera@10gen.com]@smtp.gmail.com:587 smtp_pass="`/usr/bin/security -q find-internet-password -g -a aolivera@gmail.com -s imap.gmail.com -w`"
-#set folder=imaps://angelo.olivera@imap.gmail.com/
 
 # vi: ft=muttrc
